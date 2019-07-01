@@ -1,0 +1,36 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" id="username" placeholder="Search"
+                    ng-model="username" ng-keyup="total(username)" />
+            </div>
+            <div ng-hide="hideinfo">
+                <div class=" panel panel-default" ng-repeat="usrinfo in search_name"
+                    ng-click="choose_textbox(usrinfo.commit.author.name)">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="{{usrinfo.author.avatar_url}}" class="img-circle" width="100%" />
+                            </div>
+                            <div class="col-sm-9">
+                                <p>sha:{{usrinfo.sha}}</p>
+                                <p>name:{{usrinfo.commit.author.name}}</p>
+                            </div>
+                        </div>
+                        <div class="row" style="padding:20px;">
+                            <p>Message:{{usrinfo.commit.message}}</p>
+                            <p>date:{{usrinfo.commit.author.date}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <h3>User List</h3>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="user in vm.users">{{user.useremail}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

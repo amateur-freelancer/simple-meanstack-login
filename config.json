@@ -1,0 +1,5 @@
+﻿{
+    "connectionString": "mongodb://localhost:27017/logindb",
+    "apiUrl": "http://localhost:5000/api",
+    "secret": "This is the first MEAN stack project."
+}
